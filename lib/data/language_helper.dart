@@ -225,7 +225,7 @@ class LanguageHelper {
     },
   ];
 
-  final wordsList = [
+  final dharugWordsList = [
     'naadyu',
     'ngununy',
     'ngaradyawu',
@@ -305,14 +305,191 @@ class LanguageHelper {
     'bugidwara',
   ];
 
-  List<String> getRandomWords(String sentence) {
+  final englishWordsList = [
+    'I',
+    'see',
+    'the',
+    'food',
+    'I',
+    'listened',
+    'to/heard',
+    'the',
+    'water',
+    'The',
+    'man',
+    'speared',
+    'the',
+    'kangaroo',
+    'The',
+    'women',
+    'collected',
+    'the',
+    'fish',
+    'You',
+    'will',
+    'see',
+    'the',
+    'water/river',
+    'I',
+    'am',
+    'on',
+    'country',
+    'The',
+    'fish',
+    'is',
+    'in',
+    'the',
+    'water',
+    'What',
+    'is',
+    'this?',
+    'Big',
+    'Ship',
+    'Beautiful',
+    'wallaby',
+    'That',
+    'is',
+    'a',
+    'rock',
+    'That',
+    'is',
+    'a',
+    'stick',
+    'I',
+    'am',
+    'good',
+    '/well',
+    'I',
+    'saw',
+    'the',
+    'tree',
+    'You',
+    'saw',
+    'me',
+    'I',
+    'Speak',
+    'I',
+    'drink',
+    'water',
+    'I',
+    'go',
+    'I',
+    'will',
+    'go',
+    'tomorrow',
+    'morning',
+    'I',
+    'will',
+    'cool',
+    'myself',
+    'in',
+    'the',
+    'rain',
+    'I',
+    'talk',
+    'to',
+    'myself',
+    'Are',
+    'you',
+    'well/good?',
+    'Son',
+    'are',
+    'you',
+    'hungry?',
+    'Drink',
+    'tea?',
+    'Why',
+    'don’t',
+    'you',
+    'drink?',
+    'Whose',
+    'feet?',
+    'I',
+    'cry',
+    'because',
+    'I',
+    'have',
+    'no',
+    'water',
+    'You',
+    'are',
+    'sick',
+    'I',
+    'don’t',
+    'desire/want',
+    'your',
+    'company',
+    'The',
+    'possum',
+    'is',
+    'in',
+    'the',
+    'tree',
+    'The',
+    'food',
+    'is',
+    'for',
+    'the',
+    'possum',
+    'I',
+    'see',
+    'the',
+    'woman’s',
+    'stick',
+    'from/because',
+    'of',
+    'the',
+    'cold',
+    'without',
+    'food',
+    'He',
+    'gave',
+    'pork',
+    'and',
+    'bread',
+    'to',
+    'the',
+    'people',
+    'It',
+    'was',
+    'hurt/cut',
+    'by',
+    'an',
+    'oyster',
+    'shell',
+    'during',
+    'bathing',
+  ];
+
+  List<String> getRandomDharugWords(String sentence) {
     List<String> words = sentence.trim().split(' ');
     List<String> tempList = [];
 
     final wordPadding = words.length % 2 == 0 ? 2 : 3;
     final randomWordsLenght = words.length + wordPadding;
     while (tempList.length != randomWordsLenght) {
-      final randomWord = wordsList[rand.nextInt(wordsList.length)];
+      final randomWord = dharugWordsList[rand.nextInt(dharugWordsList.length)];
+      final flag = words.contains(randomWord);
+      if (flag) {
+        continue;
+      } else {
+        tempList.add(randomWord);
+      }
+    }
+    tempList.addAll(words);
+    tempList.shuffle();
+    return tempList;
+  }
+
+  List<String> getRandomEnglishWords(String sentence) {
+    List<String> words = sentence.trim().split(' ');
+    List<String> tempList = [];
+
+    final wordPadding = words.length % 2 == 0 ? 2 : 3;
+    final randomWordsLenght = words.length + wordPadding;
+    while (tempList.length != randomWordsLenght) {
+      final randomWord =
+          englishWordsList[rand.nextInt(englishWordsList.length)];
       final flag = words.contains(randomWord);
       if (flag) {
         continue;

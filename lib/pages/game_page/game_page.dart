@@ -88,7 +88,7 @@ class _GamePageState extends State<GamePage> {
   void getRandomData() {
     setState(() {
       data = _helper.getRandomPhrase();
-      selectOptions = _helper.getRandomWords(data['dharug']);
+      selectOptions = _helper.getRandomDharugWords(data['dharug']);
       showingOptions = List.from(selectOptions);
       selectedAnswer.clear();
       answer = data['dharug'].trim().split(' ');
