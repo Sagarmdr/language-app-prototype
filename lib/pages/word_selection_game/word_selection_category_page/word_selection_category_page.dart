@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:sample_language_app/data/language_helper.dart';
+import 'package:sample_language_app/global_constants.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import '../../global_constants.dart';
 import 'local_widgets/category_tile.dart';
 
 class CategoryPage extends StatefulWidget {

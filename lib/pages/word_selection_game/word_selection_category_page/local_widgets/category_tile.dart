@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:sample_language_app/pages/game_page/game_page.dart';
 import 'package:sample_language_app/widgets/neu_container.dart';
+
+import '../../word_selection_game_page/word_selection_game_page.dart';
 
 class CategoryTile extends StatelessWidget {
   const CategoryTile({
@@ -20,7 +21,8 @@ class CategoryTile extends StatelessWidget {
       onTap: () {
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => const GamePage()),
+          MaterialPageRoute(
+              builder: (context) => const WordSelectionGamePage()),
         );
       },
       child: NeuContainer(

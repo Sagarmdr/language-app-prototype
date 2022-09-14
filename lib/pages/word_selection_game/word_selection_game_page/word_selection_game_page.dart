@@ -1,20 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:sample_language_app/data/language_helper.dart';
+import 'package:sample_language_app/global_constants.dart';
 import 'package:sample_language_app/main.dart';
 import 'package:sample_language_app/widgets/neu_button.dart';
 import 'package:sample_language_app/widgets/neu_container.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-import '../../global_constants.dart';
-
-class GamePage extends StatefulWidget {
-  const GamePage({Key? key}) : super(key: key);
+class WordSelectionGamePage extends StatefulWidget {
+  const WordSelectionGamePage({Key? key}) : super(key: key);
 
   @override
-  State<GamePage> createState() => _GamePageState();
+  State<WordSelectionGamePage> createState() => _WordSelectionGamePageState();
 }
 
-class _GamePageState extends State<GamePage> {
+class _WordSelectionGamePageState extends State<WordSelectionGamePage> {
   final LanguageHelper _helper = LanguageHelper();
   Map data = {
     'english': '',

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:sample_language_app/pages/category_page/category_page.dart';
+import 'package:sample_language_app/pages/word_selection_game/word_selection_category_page/word_selection_category_page.dart';
 
 import 'global_constants.dart';
 
