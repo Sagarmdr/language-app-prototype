@@ -24,7 +24,7 @@ class _WordSelectionGamePageState extends State<WordSelectionGamePage> {
     'dharug': '',
   };
 
-  List<String> selectOptions = []; //has the random word
+  List<String> answerOptions = []; //has the random word
   List<String> showingOptions = []; //used only for showing options data in UI
   List<String> selectedAnswer = []; //the selected data as answer by user
 
@@ -36,7 +36,7 @@ class _WordSelectionGamePageState extends State<WordSelectionGamePage> {
   void clearAnswer() {
     setState(() {
       selectedAnswer.clear();
-      showingOptions = List.from(selectOptions);
+      showingOptions = List.from(answerOptions);
       answerResult = null;
     });
   }
@@ -90,8 +90,8 @@ class _WordSelectionGamePageState extends State<WordSelectionGamePage> {
   void getRandomData() {
     setState(() {
       data = _helper.getRandomPhrase();
-      selectOptions = _helper.getRandomDharugWords(data['dharug']);
-      showingOptions = List.from(selectOptions);
+      answerOptions = _helper.getRandomDharugWords(data['dharug']);
+      showingOptions = List.from(answerOptions);
       selectedAnswer.clear();
       answer = data['dharug'].trim().split(' ');
       answerResult = null;
