@@ -19,6 +19,7 @@ class AppTile extends StatelessWidget {
           horizontal: 16,
           vertical: 15,
         ),
+        margin: const EdgeInsets.symmetric(vertical: 8),
         child: child,
       ),
     );

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:sample_language_app/pages/word_selection_game/word_selection_category_page/word_selection_category_page.dart';
-
 import 'global_constants.dart';
+import 'pages/game_selection_page/game_selection_page.dart';
 
 final GlobalKey<ScaffoldMessengerState> kScaffoldMessengerKey =
     GlobalKey<ScaffoldMessengerState>();
@@ -38,7 +37,7 @@ class MyApp extends StatelessWidget {
           ),
         ),
       ),
-      home: const CategoryPage(),
+      home: const GameSelectionPage(),
     );
   }
 }

@@ -5,14 +5,15 @@ import 'package:shared_preferences/shared_preferences.dart';
 import '../word_selection_game_page/word_selection_game_page.dart';
 import '../../../widgets/select_game_widgets/select_game_category_tile.dart';
 
-class CategoryPage extends StatefulWidget {
-  const CategoryPage({Key? key}) : super(key: key);
+class WordSelectionCategoryPage extends StatefulWidget {
+  const WordSelectionCategoryPage({Key? key}) : super(key: key);
 
   @override
-  State<CategoryPage> createState() => _CategoryPageState();
+  State<WordSelectionCategoryPage> createState() =>
+      _WordSelectionCategoryPageState();
 }
 
-class _CategoryPageState extends State<CategoryPage> {
+class _WordSelectionCategoryPageState extends State<WordSelectionCategoryPage> {
   int highScore = 0;
   void getHighestScore() async {
     final prefs = await SharedPreferences.getInstance();
