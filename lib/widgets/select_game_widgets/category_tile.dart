@@ -1,30 +1,24 @@
 import 'package:flutter/material.dart';
 import 'package:sample_language_app/widgets/neu_container.dart';
 
-import '../../word_selection_game_page/word_selection_game_page.dart';
-
 class CategoryTile extends StatelessWidget {
   const CategoryTile({
     Key? key,
     required this.title,
     required this.numberOfPhrases,
     required this.categoryScore,
+    required this.onTap,
   }) : super(key: key);
 
   final String title;
   final int numberOfPhrases;
   final int categoryScore;
+  final VoidCallback onTap;
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () {
-        Navigator.push(
-          context,
-          MaterialPageRoute(
-              builder: (context) => const WordSelectionGamePage()),
-        );
-      },
+      onTap: onTap,
       child: NeuContainer(
         height: 140,
         padding: const EdgeInsets.symmetric(

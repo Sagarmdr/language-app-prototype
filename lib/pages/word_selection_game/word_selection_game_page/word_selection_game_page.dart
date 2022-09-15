@@ -61,11 +61,11 @@ class _WordSelectionGamePageState extends State<WordSelectionGamePage> {
 
   void checkHighScoreAndSave() async {
     final prefs = await SharedPreferences.getInstance();
-    int? temp = prefs.getInt(kHighScoreKey);
+    int? temp = prefs.getInt(kHighScoreKeyWordSelectionGame);
     // print()
     int flag = temp ?? 0;
     if (correctAnswerStreak > flag) {
-      prefs.setInt(kHighScoreKey, correctAnswerStreak);
+      prefs.setInt(kHighScoreKeyWordSelectionGame, correctAnswerStreak);
     }
   }
 

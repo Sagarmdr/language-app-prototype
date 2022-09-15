@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:sample_language_app/data/language_helper.dart';
 import 'package:sample_language_app/global_constants.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'local_widgets/category_tile.dart';
+import '../word_selection_game_page/word_selection_game_page.dart';
+import '../../../widgets/select_game_widgets/category_tile.dart';
 
 class CategoryPage extends StatefulWidget {
   const CategoryPage({Key? key}) : super(key: key);
@@ -16,9 +17,9 @@ class _CategoryPageState extends State<CategoryPage> {
   void getHighestScore() async {
     final prefs = await SharedPreferences.getInstance();
     setState(() {
-      int? temp = prefs.getInt(kHighScoreKey);
+      int? temp = prefs.getInt(kHighScoreKeyWordSelectionGame);
       if (temp == null) {
-        prefs.setInt(kHighScoreKey, 0);
+        prefs.setInt(kHighScoreKeyWordSelectionGame, 0);
       }
       highScore = temp ?? 0;
     });
@@ -49,6 +50,13 @@ class _CategoryPageState extends State<CategoryPage> {
                 title: 'Common Phrases',
                 categoryScore: highScore,
                 numberOfPhrases: dataHelper.dataMap.length,
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const WordSelectionGamePage()),
+                  );
+                },
               ),
             ],
           ),
