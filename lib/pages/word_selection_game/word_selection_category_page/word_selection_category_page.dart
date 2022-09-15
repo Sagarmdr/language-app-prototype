@@ -3,7 +3,7 @@ import 'package:sample_language_app/data/language_helper.dart';
 import 'package:sample_language_app/global_constants.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import '../word_selection_game_page/word_selection_game_page.dart';
-import '../../../widgets/select_game_widgets/category_tile.dart';
+import '../../../widgets/select_game_widgets/select_game_category_tile.dart';
 
 class CategoryPage extends StatefulWidget {
   const CategoryPage({Key? key}) : super(key: key);
@@ -46,7 +46,7 @@ class _CategoryPageState extends State<CategoryPage> {
           ),
           child: ListView(
             children: [
-              CategoryTile(
+              SelectGameCategoryTile(
                 title: 'Common Phrases',
                 categoryScore: highScore,
                 numberOfPhrases: dataHelper.dataMap.length,

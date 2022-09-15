@@ -8,11 +8,13 @@ class NeuButton extends StatelessWidget {
     required this.iconData,
     required this.onTap,
     this.tooltip,
+    this.iconColor,
   }) : super(key: key);
 
   final IconData iconData;
   final VoidCallback onTap;
   final String? tooltip;
+  final Color? iconColor;
 
   @override
   Widget build(BuildContext context) {
@@ -25,6 +27,7 @@ class NeuButton extends StatelessWidget {
         child: Icon(
           iconData,
           size: 30,
+          color: iconColor,
         ),
       ),
     );

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:sample_language_app/widgets/neu_container.dart';
 
-class CategoryTile extends StatelessWidget {
-  const CategoryTile({
+class SelectGameCategoryTile extends StatelessWidget {
+  const SelectGameCategoryTile({
     Key? key,
     required this.title,
     required this.numberOfPhrases,
