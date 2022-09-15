@@ -38,7 +38,7 @@ class _WordSelectionCategoryPageState extends State<WordSelectionCategoryPage> {
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
-          title: const Text('CATEGORY'),
+          title: const Text('WORDS SELECT'),
         ),
         body: Container(
           padding: const EdgeInsets.symmetric(

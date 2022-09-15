@@ -16,7 +16,7 @@ class LanguageHelper {
     'Beautiful wallaby,Warada ADJ barra,Warada barra',
     'That is a rock,Nanu  giba,Nanu giba',
     'That is a stick,Nanu  wadi,Nanu wadi',
-    'I am good /well,Ngaya budyari,Ngaya budyari',
+    'I am good/well,Ngaya budyari,Ngaya budyari',
     'I saw the tree,naa- dya - wu   yarra,Naadyawu yarra',
     '‘You saw me’,naa-dya-   mi- nga,Naadyaminga',
     'I Speak,Baya- wu,Bayawu',
@@ -104,7 +104,7 @@ class LanguageHelper {
       'dharug': 'Nanu wadi',
     },
     {
-      'english': 'I am good /well',
+      'english': 'I am good/well',
       'pronunciation': 'Ngaya budyari',
       'dharug': 'Ngaya budyari',
     },
@@ -154,7 +154,7 @@ class LanguageHelper {
       'dharug': 'Ngiyini budyari',
     },
     {
-      'english': 'Son are you  hungry?',
+      'english': 'Son are you hungry?',
       'pronunciation': 'Durung ngiyini  yuruwin',
       'dharug': 'Durung ngiyini yuruwin',
     },
@@ -357,8 +357,7 @@ class LanguageHelper {
     'stick',
     'I',
     'am',
-    'good',
-    '/well',
+    'good/well',
     'I',
     'saw',
     'the',
@@ -481,11 +480,32 @@ class LanguageHelper {
     return tempList;
   }
 
-  List<String> getRandomEnglishWords(String sentence) {
+  List<String> getRandomEnglislhWords(String sentence) {
     List<String> words = sentence.trim().split(' ');
     List<String> tempList = [];
 
     final wordPadding = words.length % 2 == 0 ? 2 : 3;
+    final randomWordsLenght = words.length + wordPadding;
+    while (tempList.length != randomWordsLenght) {
+      final randomWord =
+          englishWordsList[rand.nextInt(englishWordsList.length)];
+      final flag = words.contains(randomWord);
+      if (flag) {
+        continue;
+      } else {
+        tempList.add(randomWord);
+      }
+    }
+    tempList.addAll(words);
+    tempList.shuffle();
+    return tempList;
+  }
+
+  List<String> getRandomEnglishWords(String sentence) {
+    List<String> words = sentence.trim().split(' ');
+    List<String> tempList = [];
+
+    final wordPadding = words.length % 2 == 0 ? 4 : 5;
     final randomWordsLenght = words.length + wordPadding;
     while (tempList.length != randomWordsLenght) {
       final randomWord =
