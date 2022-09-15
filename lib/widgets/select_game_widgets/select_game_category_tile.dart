@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:sample_language_app/widgets/neu_container.dart';
+import 'package:sample_language_app/widgets/app_tile.dart';
 
 class SelectGameCategoryTile extends StatelessWidget {
   const SelectGameCategoryTile({
@@ -17,69 +17,62 @@ class SelectGameCategoryTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return InkWell(
+    return AppTile(
       onTap: onTap,
-      child: NeuContainer(
-        height: 140,
-        padding: const EdgeInsets.symmetric(
-          horizontal: 16,
-          vertical: 15,
-        ),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            Text(
-              title,
-              style: const TextStyle(
-                fontSize: 22,
-                fontWeight: FontWeight.bold,
-                letterSpacing: 1.5,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          Text(
+            title,
+            style: const TextStyle(
+              fontSize: 22,
+              fontWeight: FontWeight.bold,
+              letterSpacing: 1.5,
+            ),
+          ),
+          const SizedBox(height: 15),
+          Row(
+            children: [
+              const Text(
+                'TOTAL PHRASES : ',
+                style: TextStyle(
+                  fontSize: 16,
+                  fontWeight: FontWeight.w600,
+                  letterSpacing: 2,
+                ),
               ),
-            ),
-            const SizedBox(height: 15),
-            Row(
-              children: [
-                const Text(
-                  'TOTAL PHRASES : ',
-                  style: TextStyle(
-                    fontSize: 16,
-                    fontWeight: FontWeight.w600,
-                    letterSpacing: 2,
-                  ),
+              Text(
+                numberOfPhrases.toString(),
+                style: const TextStyle(
+                  fontSize: 18,
+                  fontWeight: FontWeight.w400,
+                  letterSpacing: 2,
                 ),
-                Text(
-                  numberOfPhrases.toString(),
-                  style: const TextStyle(
-                    fontSize: 18,
-                    fontWeight: FontWeight.w400,
-                    letterSpacing: 2,
-                  ),
+              ),
+            ],
+          ),
+          const SizedBox(height: 8),
+          Row(
+            children: [
+              const Text(
+                'CATEGORY HIGH SCORE : ',
+                style: TextStyle(
+                  fontSize: 16,
+                  fontWeight: FontWeight.w600,
+                  letterSpacing: 2,
                 ),
-              ],
-            ),
-            const SizedBox(height: 8),
-            Row(
-              children: [
-                const Text(
-                  'CATEGORY HIGH SCORE : ',
-                  style: TextStyle(
-                    fontSize: 16,
-                    fontWeight: FontWeight.w600,
-                    letterSpacing: 2,
-                  ),
+              ),
+              Text(
+                categoryScore.toString(),
+                style: const TextStyle(
+                  fontSize: 18,
+                  fontWeight: FontWeight.w400,
+                  letterSpacing: 2,
                 ),
-                Text(
-                  categoryScore.toString(),
-                  style: const TextStyle(
-                    fontSize: 18,
-                    fontWeight: FontWeight.w400,
-                    letterSpacing: 2,
-                  ),
-                ),
-              ],
-            ),
-          ],
-        ),
+              ),
+            ],
+          ),
+        ],
       ),
     );
   }
