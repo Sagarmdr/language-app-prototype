@@ -24,7 +24,7 @@ class SelectGameAnswerOptionsWdiget extends StatelessWidget {
                 horizontal: 8,
                 vertical: 4,
               ),
-              onPressed: onChipPressed(option),
+              onPressed: () => onChipPressed(option),
             ),
         ],
       ),

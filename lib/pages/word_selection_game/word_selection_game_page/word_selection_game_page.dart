@@ -2,12 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:sample_language_app/data/language_helper.dart';
 import 'package:sample_language_app/global_constants.dart';
 import 'package:sample_language_app/main.dart';
-import 'package:sample_language_app/widgets/select_game_widgets/select_game_answer_options_widget.dart';
+import 'package:sample_language_app/widgets/neu_container.dart';
 import 'package:sample_language_app/widgets/select_game_widgets/select_game_correct_answer_streak_widget.dart';
 import 'package:sample_language_app/widgets/select_game_widgets/select_game_option_buttons.dart';
 import 'package:sample_language_app/widgets/select_game_widgets/select_game_question_widget.dart';
-import 'package:sample_language_app/widgets/select_game_widgets/select_game_select_answer.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+
+import '../../../widgets/select_game_widgets/select_game_answer_options_widget.dart';
 
 class WordSelectionGamePage extends StatefulWidget {
   const WordSelectionGamePage({Key? key}) : super(key: key);
@@ -137,32 +138,22 @@ class _WordSelectionGamePageState extends State<WordSelectionGamePage> {
                   question: data['english'],
                 ),
               ),
+              const Text(
+                'ANSWER',
+                style: TextStyle(letterSpacing: 5),
+              ),
+              const SizedBox(height: 8),
               Expanded(
-                child: SelectGameAnswerWidget(selectedAnswer: selectedAnswer),
+                child: NeuContainer(
+                  alignment: Alignment.center,
+                  child: Wrap(
+                    children: [
+                      for (final word in selectedAnswer) Text('$word '),
+                    ],
+                  ),
+                ),
               ),
               const SizedBox(height: 15),
-              // Expanded(
-              //   flex: 4,
-              //   child: Container(
-              //     alignment: Alignment.topCenter,
-              //     padding: const EdgeInsets.symmetric(vertical: 16),
-              //     child: Wrap(
-              //       spacing: 8,
-              //       runSpacing: 12,
-              //       children: [
-              //         for (final option in showingOptions)
-              //           ActionChip(
-              //             label: Text(option),
-              //             labelPadding: const EdgeInsets.symmetric(
-              //               horizontal: 8,
-              //               vertical: 4,
-              //             ),
-              //             onPressed: () => addToAnswer(option),
-              //           ),
-              //       ],
-              //     ),
-              //   ),
-              // ),
               Expanded(
                 flex: 4,
                 child: SelectGameAnswerOptionsWdiget(
