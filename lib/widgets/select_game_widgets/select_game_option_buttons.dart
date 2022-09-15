@@ -21,16 +21,19 @@ class SelectGameOptionButtons extends StatelessWidget {
         NeuButton(
           iconData: Icons.navigate_next,
           tooltip: 'Next Phrase',
+          iconColor: Colors.grey,
           onTap: onNext,
         ),
         NeuButton(
           iconData: Icons.refresh,
           tooltip: 'Clear Answer',
+          iconColor: Colors.red,
           onTap: onClear,
         ),
         NeuButton(
           iconData: Icons.check,
           tooltip: 'Check Answer',
+          iconColor: Colors.black,
           onTap: onCheck,
         ),
       ],
